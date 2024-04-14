@@ -2,12 +2,14 @@
 # random number matrix to help with numbers and loops
 import random
 import secrets
+import constants
+
+import countries
 
 def generate_random_number():
     return random.randint(0, 99)
 
 def generate_random_string(length):
-  # Generates a random string of the given length
   characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
   random_string = ""
   for i in range(length):
@@ -31,4 +33,17 @@ def generate_matrix():
     
     print(outputString)
     return array
+
+def generate_random_name():
+    name_index = random.randint(0, len(constants.names) - 1)
+    name = constants.names[name_index]
+    return name
+
+def generate_person():
+    name = generate_random_name()
+    birthplace = countries.generate_random_country()
+    age = generate_random_number()
+
+    return {"name": name, "birthplace": birthplace, "age": age}
+
 # ================================================================================
