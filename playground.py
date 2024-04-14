@@ -4,10 +4,10 @@ import json
 
 # playground-specific
 import sports
-import ideas
+import generators
 import countries
 # ================================================================================
 
 # sports.choose_request()
 
-print(ideas.generate_person())
+print(generators.generate_person())
